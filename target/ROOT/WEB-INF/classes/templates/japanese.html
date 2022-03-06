@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: header" />
+
+<body>
+
+<header class="header" th:include="fragments/menu :: menu" />
+
+<div class="boxMain">
+   <div class="boxKisa">
+        <article class="kisa">
+            <h1>일본어 소개</h1>
+            <p><img src="img/ukiyoe.jpg" alt="우키요에"></p>
+            <p>일본어 공부의 첫걸음은 무엇보다 히라가나를 외우는 것이다.
+            	사실 영어 공부와 같다. 단 너무 빨리 다 외우려고 하면 좌절하게 될 수 있다.
+            	차근히 연습장에 쓰면서 외우면 2주 정도면 다 외울 수 있다.
+            	그리고 가타카나를 공부한다. 가타카나는 단 다 외우지 못해도 상관없다.
+            	그리고 문법을 좀 알필요가 있다. 물론 학자가 되지 않는 이상,
+            	모든 문법을 다 공부하려고 하지 말고, 회화에 필수적인 문법은
+            	시간을 들여 집중적으로 공부한다. 인사말도 문법이다. 무조건 외운다.
+            	그리고 나머지 시간을 들여서 어휘를 공부해야 한다.
+            	사실 일본어를 얼마나 잘할 수 있느냐는 어휘에 달려있다고 해도 과언이 아니다.
+            	생활하면서 접근하게 되는 일본어가 충분하다면 매일매일 충분한 양이 되겠지만,
+            	일본이 아닌 곳에 있는한 이건 도저히 불가능하다. 그래서 책/인터넷/유튜브/어플등으로
+            	공부를 해야 한다. 매일 20~30분 정도 꾸준하게 공부한다면
+            	일본에 가지않아도 일본인과 대화하는 데는 큰 무리가 없을 것이다.</p>
+            
+        </article>
+    </div>
+    <div class="boxSide">
+        <div th:include="fragments/side :: side" />
+    </div>
+</div>
+
+<div th:include="fragments/copyright :: copyright" />
+
+</body>
+</html>

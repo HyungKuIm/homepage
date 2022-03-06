@@ -4,7 +4,7 @@
       "name": "spring.datasource",
       "type": "javax.sql.DataSource",
       "sourceType": "com.oraclejava.homepage.AppConfig",
-      "sourceMethod": "javax.sql.DataSource realDataSource() "
+      "sourceMethod": "realDataSource()"
     }
   ],
   "properties": [],

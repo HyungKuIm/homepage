@@ -7,7 +7,23 @@
 <header class="header" th:include="fragments/menu :: menu" />
 
 <div class="boxMain">
-    gissing 소개입니다.
+   <div class="boxKisa">
+        <article class="kisa">
+            <h1>George Gissing 소개</h1>
+            <p><img src="img/gissing2.jpg" alt="George Gissing"></p>
+            <p>조지 로버트 기싱(George Robert Gissing)은 1857년 11월 22일 영국 중부의 소도시
+            웨이크필드에서 약제사의 아들로 태어났다. 퀘이커 교도들이 운영하는 사립학교를 졸업한
+            그는 훗날 맨체스터대학으로 개편된 오웬스대학에 장학생으로 입학하였다.
+            어려서부터 조숙한 편이었던 그는 이 무렵에 이미 장래의 고전학자로 촉망받고 있었다.
+            그러나 그는 한 매춘부에게 매혹된 나머지 그녀를 '구원'하려고 사소한 절도죄를 범한 끝에
+            퇴학당했으며 얼마 동안 감옥에 갇혀 있었다. 이 비행 때문에 그의 고전학자로서의
+            미래가 무산되고 말았다.</p>
+            
+        </article>
+    </div>
+    <div class="boxSide">
+        <div th:include="fragments/side :: side" />
+    </div>
 </div>
 
 <div th:include="fragments/copyright :: copyright" />

@@ -2,34 +2,57 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:include="fragments/header :: header" />
 
-<body>
+<body class="top">
 
 <header class="header" th:include="fragments/menu :: menu" />
 
-<div class="boxMain">
-    <div class="boxKisa">
-        <article class="kisa">
-            <h1>안녕하세요</h1>
-            <p><img src="img/im.JPEG" alt=""></p>
-            <p>홈페이지를 개설했습니다. 그동안 이것저것 개설과 폐지를 반복하다보니,,,
-                한곳에 정착하기가 어려웠습니다. 무료도 쓰다가 asp.net 사이트에 가입도 하고
-                jsp(이곳)으로 옮겼지만, 여러가지 바쁜일도 있고 해서 제대로 관리를 못했습니다.</p>
-            <p>하지만, 이곳 cafe24에서 당분간 정착을 좀 해보려고 합니다.
-                들르신 분들 감사드립니다. 좋은 시간 되시고요.사이트의 목적은 제가 읽고 있는 글들에 대한
-                개인적인 번역/평등을 적고, 일본어와 관련된 글도 남기려고 합니다. 감사합니다.</p>
-        </article>
-    </div>
-    <div class="boxSide">
-        <aside class="sidemenu">
-            <h1>Side Menu</h1>
-            <ul>
-                <li><a href="#">side1</a></li>
-                <li><a href="#">side2</a></li>
-                <li><a href="#">side3</a></li>
-                <li><a href="#">side4</a></li>
-            </ul>
-        </aside>
-    </div>
+<div class="boxA">
+	<article class="gaiyou pickup">
+	<a th:href="@{/intro}">
+		<img src="img/tomato-top.jpg" alt="">
+		<h1>주인장 소개！</h1>
+		<p>홈페이지를 관리하는 주인장을 소개합니다. 페이스북, 네이버블로그, 인스타그램 정보 확인 가능!!</p>
+		<p class="more">계속 읽기<i class="fa fa-chevron-right"></i></p>
+	</a>
+	</article>
+
+<div class="boxA-1">
+	<article class="gaiyou">
+	<a th:href="@{/gissing}">
+		<img src="img/color-top.jpg" alt="">
+		<h1>19세기 영국작가 조지 기싱 소개</h1>
+		<p>한국에는 비록 덜 알려졌지만, 명망있는 영국작가인 조지 기싱을 소개합니다.</p>
+		<p class="more">계속 읽기<i class="fa fa-chevron-right"></i></p>
+	</a>
+	</article>
+
+	<article class="gaiyou">
+	<a th:href="@{/japanese}">
+		<img src="img/imo-top.jpg" alt="">
+		<h1>일본어 소개</h1>
+		<p>가장 배우기 쉽다(?)고 잘못 알려진 일본어를 쉽게 배울 수 있는 방법은??</p>
+		<p class="more">계속 읽기<i class="fa fa-chevron-right"></i></p>
+	</a>
+	</article>
+
+	<article class="gaiyou">
+	<a th:href="@{/guestbook}">
+		<img src="img/can-top.jpg" alt="">
+		<h1>방명록</h1>
+		<p>홈페이지를 방문하셔서 남기실 글이 있으시면 남기실 수 있습니다.</p>
+		<p class="more">계속 읽기<i class="fa fa-chevron-right"></i></p>
+	</a>
+	</article>
+
+	<!-- <article class="gaiyou">
+	<a href="#">
+		<img src="img/sakura-top.jpg" alt="">
+		<h1>花好きにおすすめの鑑賞スポット</h1>
+		<p>たくさんの満開の花に囲まれて過ごしたいときにおすすめの鑑賞スポットを紹介します。季節ごとに色とりどり…</p>
+		<p class="more">続きを読む<i class="fa fa-chevron-right"></i></p>
+	</a>
+	</article> -->
+</div>
 </div>
 
 <div th:include="fragments/copyright :: copyright" />
