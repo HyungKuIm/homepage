@@ -122,4 +122,10 @@ public class GuestbookController {
 		
 		
 	}
+
+	@RequestMapping("/write")
+	public String write() {
+		return "guestbook/write";
+	}
+
 }

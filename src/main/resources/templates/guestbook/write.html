@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: header" />
+
+<script>
+	function check(){
+		if(document.getElementById("content").value.length == 0) {//text area 체크
+			alert("글을 작성해 주세요.");
+			document.getElementById("content").focus();
+			return false;
+		}
+
+		if(document.getElementById("name").value.length == 0) {//이름 체크
+			alert("이름을 작성해 주세요.");
+			document.getElementById("name").focus();
+			return false;
+		}
+
+		if(document.getElementById("email").value.length == 0) {//이메일 체크
+			alert("이메일을 작성해 주세요.");
+			document.getElementById("email").focus();
+			return false;
+		}
+
+		if(document.getElementById("pass").value.length == 0) {//비밀번호 체크
+			alert("비밀번호를 작성해 주세요.");
+			document.getElementById("pass").focus();
+			return false;
+		}
+	}
+	</script>
+
+<body>
+
+<header class="header" th:include="fragments/menu :: menu" />
+
+<div class="boxMain">
+	<div class="boxKisa">
+		<h1 class="my_title">방명록 글 작성</h1>
+		<hr id="title">
+		
+		<a th:href="@{/guestbook}" class="my_link"><h2 class="my_subtitle">방명록 홈</h2></a>
+		<a th:href="@{/guestbook/list}" class="my_link"><h2 class="my_subtitle">방명록 목록</h2></a>
+		
+		<hr class="my_hr" align="left">
+		
+		<form th:action="@{/guestbook/add}" method="post" onsubmit="return check()">
+			<textarea placeholder="글을 작성해 주세요." id="content" name="content" rows="7" cols="50" class="my_textarea"></textarea>
+			<br>
+			<p class="my_p">
+				<input type="text" id="name" name="name" class="my_input" placeholder="이름 입력" >
+				<input type="text" id="email" name="email" class="my_input" placeholder="이메일 입력" >
+				<input type="password" id="pass" name="pass" class="my_input" placeholder="비번 입력" >
+				<input type="submit" id="btn" value="방명록 등록">
+			</p>
+		
+		</form>
+		
+	</div>
+	<div class="boxSide">
+        <div th:include="fragments/side :: side" />
+    </div>
+</div>
+
+<div th:include="fragments/copyright :: copyright" />
+
+</body>
+</html>
