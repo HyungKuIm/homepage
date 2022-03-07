@@ -124,8 +124,23 @@ public class GuestbookController {
 	}
 
 	@RequestMapping("/write")
-	public String write() {
+	String write() {
 		return "guestbook/write";
+	}
+	
+	@RequestMapping(value="/add", method=RequestMethod.POST)
+	String add(@ModelAttribute Board board, RedirectAttributes rttr) {
+		String sql = "INSERT INTO board(name, email, pass, content, date) VALUES (?,?,?,?, now())";
+		
+		int result = jdbcTemplate.update(sql,  board.getName(), board.getEmail(), board.getPass(), board.getContent());
+		
+		if (result == 1) {
+			rttr.addAttribute("msg", "글이 등록되었습니다.");
+		} else {
+			rttr.addAttribute("msg", "글 등록시 문제가 발생했습니다.");
+		}
+		
+		return "redirect:/guestbook/list";
 	}
 
 }
