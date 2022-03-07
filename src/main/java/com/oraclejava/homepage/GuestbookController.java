@@ -4,11 +4,15 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -73,5 +77,49 @@ public class GuestbookController {
 		model.addAttribute("pg_end", pg_end);
 		
 		return "guestbook/list";
+	}
+
+	@RequestMapping(value="/update", method=RequestMethod.GET)
+	String update(@RequestParam Integer no, Model model) {
+		String query = "SELECT * FROM board WHERE no = ?";
+		Board board = jdbcTemplate.queryForObject(query, 
+				(rs, rowNum) 
+					-> new Board(rs.getInt("no"), rs.getString("name"), rs.getString("email"), rs.getString("content"), rs.getDate("date"), rs.getString("pass"))
+				, no);
+		
+		model.addAttribute("board", board);
+		
+		return "guestbook/update";
+		
+	}
+	
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	String update_ok(@ModelAttribute Board board, Model model, RedirectAttributes rttr) {
+		String query = "SELECT no FROM board WHERE no = ? AND pass = ?";
+		Integer result = -1; 
+		try {
+			result = jdbcTemplate.queryForObject(query, Integer.class, board.getNo(), board.getPass());
+		} catch (EmptyResultDataAccessException e) {
+			result = 0;
+		}
+		if (result != 0) {  // 비밀번호가 맞을 때 UPDATE 실행
+			query = "UPDATE board SET content = ? WHERE no = ?";
+			int resultCnt = jdbcTemplate.update(query, board.getContent(), board.getNo());
+			
+			if (resultCnt > 0) {
+				rttr.addFlashAttribute("msg", "글이 수정되었습니다.");
+				return "redirect:/guestbook/list";
+			} else {
+				rttr.addFlashAttribute("msg", "오류가 발생했습니다.");
+				return "redirect:/guestbook/list";
+			}
+		}
+		else {
+			rttr.addFlashAttribute("msg", "비밀번호 입력이 안되었거나 잘못된 비밀번호 입니다.");
+			return "redirect:/guestbook/list";
+		}
+			
+		
+		
 	}
 }

@@ -6,6 +6,14 @@
 
 <header class="header" th:include="fragments/menu :: menu" />
 
+<script th:if="${msg} != null and ${msg} != '비밀번호 입력이 안되었거나 잘못된 비밀번호 입니다.'">
+	alert("[[${msg}]]");
+</script>
+
+<script th:if="${msg} != null and ${msg} == '비밀번호 입력이 안되었거나 잘못된 비밀번호 입니다.'">
+	alert("[[${msg}]]"); window.history.back();
+</script>
+
 <div class="boxMain">
 	<div class="boxKisa">
 		<h1 class="my_title">방명록입니다.</h1>

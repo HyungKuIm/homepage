@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: header" />
+
+<body>
+
+<header class="header" th:include="fragments/menu :: menu" />
+
+<div class="boxMain">
+	<div class="boxKisa">
+		<h1 class="my_title">방명록입니다.</h1>
+		<hr id="title">
+		
+		<a th:href="@{/guestbook}" class="my_link"><h2 class="my_subtitle">방명록 홈</h2></a>
+		<a th:href="@{/guestbook/write}" class="my_link"><h2 class="my_subtitle">방명록 작성</h2></a>
+		
+		<div class="my_div">
+			<form action="" method="post" th:object="${board}">
+				<ul class="my_ul">
+					<li> 글번호 : [[*{no}]] </li>
+					<li> 작성자 : [[*{name}]] </li>
+					<li> 내용: <textarea rows="10" cols="30" class="my_textarea" th:field="*{content}">내용</textarea></li>
+					<li> 등록일: [[*{date}]] </li>
+				</ul>
+				<p style="text-align:center;">
+					<input type="password" id="pass" name="pass" placeholder="비밀번호 확인" style="height: 28px; ">
+					&nbsp; <input type="submit" value="글 수정" />
+				</p>
+				<input type="hidden" th:field="*{no}" />
+			</form>
+		</div>
+		
+	</div>
+	<div class="boxSide">
+        <div th:include="fragments/side :: side" />
+    </div>
+</div>
+
+<div th:include="fragments/copyright :: copyright" />
+
+</body>
+</html>
