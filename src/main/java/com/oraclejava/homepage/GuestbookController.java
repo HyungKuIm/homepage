@@ -32,7 +32,7 @@ public class GuestbookController {
 	}
 	
 	@RequestMapping("/list")
-	String list(@RequestParam(value="page_num", required = false) Integer pageNum, Model model, RedirectAttributes rttr) {
+	String list(@RequestParam(value="page_num", required = false) Integer pageNum, Model model) {
 		
 		
 		
@@ -40,8 +40,8 @@ public class GuestbookController {
 		int count = jdbcTemplate.queryForObject(sql, Integer.class);
 		
 		if (count == 0) {
-			rttr.addAttribute("msg", "no article");
-			return "redirect:/";
+			model.addAttribute("msg", "no article");
+			//return "guestbook/list";
 		}
 		
 		int page_max = 10;

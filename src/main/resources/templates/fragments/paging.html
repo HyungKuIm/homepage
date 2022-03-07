@@ -3,7 +3,9 @@
 	<a th:if="${page_num} >= 11" th:href="@{|/guestbook/list?page_num=${prev}|}">[이전]</a>
 	
 	<th:block th:each="page : ${#numbers.sequence(pg_start, pg_end)}">
-		<a th:href="@{|/guestbook/list?page_num=${page}|}" th:text="|[${page}]|">[1]</a>
+		<th:block th:if="${page} <= ${page_total}">
+			<a th:href="@{|/guestbook/list?page_num=${page}|}" th:text="|[${page}]|">[1]</a>
+		</th:block>
 	</th:block>
 	
 	<a th:if="${page_num} >= ${page_total}" th:href="@{|/guestbook/list?page_num=${pg_end}|}">[다음]</a>
