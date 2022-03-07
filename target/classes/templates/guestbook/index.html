@@ -7,7 +7,16 @@
 <header class="header" th:include="fragments/menu :: menu" />
 
 <div class="boxMain">
-	방명록입니다.
+	<div class="boxKisa">
+		<h1 class="my_title">방명록입니다.</h1>
+		<hr id="title">
+		
+		<a th:href="@{/guestbook/list}" class="my_link"><h2 class="my_subtitle">방명록 목록</h2></a>
+		<a th:href="@{/guestbook/write}" class="my_link"><h2 class="my_subtitle">방명록 작성</h2></a>
+	</div>
+	<div class="boxSide">
+        <div th:include="fragments/side :: side" />
+    </div>
 </div>
 
 <div th:include="fragments/copyright :: copyright" />

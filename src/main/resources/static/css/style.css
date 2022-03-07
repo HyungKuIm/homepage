@@ -218,3 +218,53 @@ body {
         box-sizing: border-box;
     }
 }
+
+
+
+/* 방명록 관련 */
+#title{/*제목 밑줄*/
+  width: 38%;
+}
+.my_title{/*제목 글자 정렬 색*/
+  text-align: center;
+  color: #4d5756;
+}
+.my_subtitle{/* 부제목 크기*/
+  width: 250px;
+}
+.my_link{/*링크 밑줄 없애기*/
+  text-decoration: none;
+}
+.btn{/*버튼 크기 조정*/
+  width: 200px;
+}
+.my_subtitle{/*main.html 서브 제목*/
+  border-bottom: solid 1.5px lightgrey;
+}
+.my_ul{/*리스트 페이지 디자인*/
+  list-style-type: circle;
+}
+.my_text{/*링크 글자 조정*/
+  font-size: 20px;
+  font-weight: bold;
+}
+.my_div{/*글 목록 리스트 디자인*/
+  border: 1px solid #d1d1d1;
+  margin-bottom: 10px;
+  border-radius: 30px;
+}
+.my_p{/*P태그 사용하게 되면 가운데 정렬*/
+  text-align: center;
+}
+.my_textarea{/*글 작성 디자인*/
+  width: 98.70%;
+  border-radius: 7px;
+  border: 1px outset #d1d1d1;
+}
+.my_input{/*input text 디자인*/
+  height: 28px;
+}
+.my_hr{/*메뉴 밑줄 디자인*/
+  width: 15%;
+  border: 1px solid #lightgrey;
+}

@@ -16,8 +16,8 @@ public class AppConfig {
     @Autowired
     DataSourceProperties dataSourceProperties;
 
-    @Bean
-    @ConfigurationProperties("spring.datasource")
+    //@Bean
+    //@ConfigurationProperties("cafe24.datasource")
     DataSource realDataSource() {
         DataSource dataSource = DataSourceBuilder
                 .create(this.dataSourceProperties.getClassLoader())

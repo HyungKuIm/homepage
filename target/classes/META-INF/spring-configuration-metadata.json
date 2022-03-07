@@ -1,10 +1,10 @@
 {
   "groups": [
     {
-      "name": "spring.datasource",
+      "name": "cafe24.datasource",
       "type": "javax.sql.DataSource",
       "sourceType": "com.oraclejava.homepage.AppConfig",
-      "sourceMethod": "realDataSource()"
+      "sourceMethod": "javax.sql.DataSource realDataSource() "
     }
   ],
   "properties": [],
