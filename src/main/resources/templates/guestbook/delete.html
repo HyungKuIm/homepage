@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: header" />
+<body>
+    
+    <header class="header" th:include="fragments/menu :: menu" />
+
+    <div class="boxMain">
+        <div class="boxKisa">            
+            <div class="my_div">
+                <form action="" method="post" th:object="${board}">
+                    <p style="text-align:center;">
+                        <input type="password" id="pass" name="pass" placeholder="비밀번호 확인" style="height: 28px; ">
+                        &nbsp; <input type="submit" value="글 삭제" />
+                    </p>
+                    <input type="hidden" th:field="*{no}" />
+                </form>
+            </div>
+            
+        </div>
+        <div class="boxSide">
+            <div th:include="fragments/side :: side" />
+        </div>
+    </div>
+    
+    <div th:include="fragments/copyright :: copyright" />
+    
+    </body>
+    </html>

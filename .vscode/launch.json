@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-App<homepage>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.oraclejava.homepage.App",
+            "projectName": "homepage",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
