@@ -33,4 +33,8 @@ public class JusorokService {
 
         return list;
     }
+
+    public Jusorok findOne(int num) {
+        return jusorokRepository.getOne(num);
+    }
 }

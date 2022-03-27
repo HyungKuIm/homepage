@@ -43,9 +43,29 @@
                 <td th:text="${jusorok.num}">1</td>
                 <td th:text="${jusorok.name}">hk</td>
                 <td th:text="${jusorok.mail}">hk@naver.com</td>
-                <td><a href="#">편집</a></td>
+                <td><a href="javascript:void(0)" class="edit">편집</a></td>
             </tr>
         </table>
+        <script>
+            $(function(){
+                // alert('jquery!');
+                $(".edit").click(function(){
+                    //alert("jquery!");
+                    var parent = $(this).parent().parent();
+                    var id = parent.children("td:nth-child(1)");
+                    //alert("id = " + id.html());
+                    $.ajax({
+                        url: "/jusorok/" + id.html(),
+                        type: "get"
+                    }).done(function(data) {
+                        console.log(data);
+                        $("#num").val(data.num);
+                        $("#name").val(data.name);
+                        $("#mail").val(data.mail);
+                    });
+                });
+            });
+        </script>
     </div>
 </body>
 </html>
