@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: header" />
+<body>
+    <header class="header" th:include="fragments/menu :: menu" />
+    <div>
+        <form id="form1" th:action="@{/jusorok/update}" method="post" th:object="${jusorokBean}">
+            <table>
+                <tr>
+                    <td class="c1">갱신</td>
+                    <td class="c2"><a th:href="@{/jusorok}">신규</a></td>
+                    <td class="c3"><a th:href="@{/jusorok/delete}">삭제</a></td>
+                    <td class="c4"><a th:href="@{/jusorok/find}">검색</a></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>번호:</td>
+                    <td><input type="text" th:field="*{num}"></td>
+                    <td th:if="${#fields.hasErrors('num')}" th:errors="*{num}" class="error"></td>
+                </tr>
+                <tr>
+                    <td>이름:</td>
+                    <td><input type="text" th:field="*{name}"></td>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></td>
+                </tr>
+                <tr>
+                    <td>메일:</td>
+                    <td><input type="text" th:field="*{mail}"></td>
+                    <td th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}" class="error"></td>
+                </tr>
+            </table>
+            <input type="submit" value="갱신">
+        </form>
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>메일</th>
+            </tr>
+            <tr th:each="jusorok : ${list}">
+                <td th:text="${jusorok.num}">1</td>
+                <td th:text="${jusorok.name}">hk</td>
+                <td th:text="${jusorok.mail}">hk@naver.com</td>
+                <td><a href="#">편집</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

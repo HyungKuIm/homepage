@@ -268,3 +268,20 @@ body {
   width: 15%;
   border: 1px solid #lightgrey;
 }
+
+/* 주소록 */
+
+.error {
+    color: red;
+    font-size: 0.7em;
+}
+
+.c1{
+    width: 150px;
+    font-size:1.5em;
+    font-weight: bold;
+}
+.c2{
+    width: 50px;
+}
+

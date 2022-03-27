@@ -1,4 +1,4 @@
-package com.oraclejava.homepage;
+package com.oraclejava.homepage.dto;
 
 import java.util.Date;
 

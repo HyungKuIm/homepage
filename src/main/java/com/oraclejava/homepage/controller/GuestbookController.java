@@ -1,7 +1,9 @@
-package com.oraclejava.homepage;
+package com.oraclejava.homepage.controller;
 
 import java.util.List;
 import java.util.Map;
+
+import com.oraclejava.homepage.dto.Board;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -24,12 +26,12 @@ public class GuestbookController {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-	@RequestMapping
-	String index() {
-		return "guestbook/index";
-	}
+	// @RequestMapping
+	// String index() {
+	// 	return "guestbook/index";
+	// }
 	
-	@RequestMapping("/list")
+	@RequestMapping(value={"","/","/list"})
 	String list(@RequestParam(value="page_num", required = false) Integer pageNum, Model model) {
 		
 		

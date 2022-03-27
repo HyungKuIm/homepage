@@ -1,4 +1,4 @@
-package com.oraclejava.homepage;
+package com.oraclejava.homepage.controller;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;

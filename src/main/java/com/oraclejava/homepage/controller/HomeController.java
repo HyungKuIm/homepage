@@ -1,4 +1,4 @@
-package com.oraclejava.homepage;
+package com.oraclejava.homepage.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
