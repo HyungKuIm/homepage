@@ -34,6 +34,12 @@ public class JusorokService {
         return list;
     }
 
+    public Jusorok delete(int num) {
+        Jusorok s_jusorok = jusorokRepository.findById(num).get();
+        jusorokRepository.delete(s_jusorok);
+        return s_jusorok;
+    }
+
     public Jusorok findOne(int num) {
         return jusorokRepository.getOne(num);
     }

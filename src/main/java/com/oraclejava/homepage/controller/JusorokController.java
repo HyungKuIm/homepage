@@ -58,6 +58,23 @@ public class JusorokController {
 
         return "jusorok/edit";
     }
+    
+    @GetMapping("/delete")
+    String delete(@ModelAttribute JusorokBean jusorokBean,  Model model) {
+        List<Jusorok> list = jusorokService.findAll();
+        model.addAttribute("list", list);
+
+        return "jusorok/delete";
+    }
+
+    @GetMapping("/delete/{num}")
+    String delete_ok(@PathVariable Integer num) {
+        
+        jusorokService.delete(num);
+
+        return "redirect:/jusorok/delete";
+    }
+
 
     @GetMapping("/{num}")
     @ResponseBody

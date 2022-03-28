@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: header" />
+<body>
+    <header class="header" th:include="fragments/menu :: menu" />
+    <div>
+        <table>
+            <tr>
+                <td class="c1">삭제</td>
+                <td class="c2"><a th:href="@{/jusorok}">신규</a></td>
+                <td class="c3"><a th:href="@{/jusorok/edit}">갱신</a></td>
+                <td class="c4"><a th:href="@{/jusorok/find}">검색</a></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>메일</th>
+                <th>삭제</th>
+            </tr>
+            <tr th:each="jusorok : ${list}">
+                <td th:text="${jusorok.num}">1</td>
+                <td th:text="${jusorok.name}">hk</td>
+                <td th:text="${jusorok.mail}">hk@naver.com</td>
+                <td><a th:href="@{'/jusorok/delete/' + ${jusorok.num}}">삭제</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
