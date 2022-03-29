@@ -2,6 +2,8 @@
 	<div class="boxSiteName">
 	    <div class="site">
 	        <h1><a href="#">HyungKu Im's HomePage</a></h1>
+			<p th:if="${session.loginMember}"><a th:href="@{/logout}">logout</a></p>
+			<p th:unless="${session.loginMember}"><a th:href="@{/login}">login</a></p>
 	    </div>
 	</div>
 	

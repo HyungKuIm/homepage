@@ -3,6 +3,7 @@ package com.oraclejava.homepage.controller;
 import java.util.List;
 
 import com.oraclejava.homepage.dto.Jusorok;
+import com.oraclejava.homepage.dto.Member;
 import com.oraclejava.homepage.service.JusorokService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller
 @RequestMapping("/jusorok")
@@ -31,7 +33,8 @@ public class JusorokController {
     //@RequestMapping
     @GetMapping
     String list(@ModelAttribute JusorokBean jusorokBean,  Model model) {
-        List<Jusorok> list = jusorokService.findAll();
+
+         List<Jusorok> list = jusorokService.findAll();
         model.addAttribute("list", list);
 
         return "jusorok/index";
