@@ -26,6 +26,10 @@ public class EmployeeService {
         return employeeRepository.findById(id);
     }
 
+    public Employee saveEmployee(Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
 
 
 }

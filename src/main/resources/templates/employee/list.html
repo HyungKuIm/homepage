@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>사원 목록</h1>
+    <p><a th:href="@{/employee/add}">추가</a></p>
     <table>
         <tr th:each="emp : ${list}">
             <td>
