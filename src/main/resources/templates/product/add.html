@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: header" />
+<body>
+    <header class="header" th:include="fragments/menu :: menu" />
+    <div class="boxMain">
+        <h1>제품 추가</h1>
+        <form th:action="@{/product/saveProduct}" method="post" enctype="multipart/form-data" th:object="${productBean}">
+            <table>
+                <tr>
+                    <td class="c1">제품명</td>
+                    <td><input type="text" id="name" th:field="*{name}" size="30"></td>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></td>
+                </tr>
+                <tr>
+                    <td class="c1">제품설명</td>
+                    <td><textarea id="description" th:field="*{description}" rows="3" cols="45"></textarea></td>
+                    <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error"></td>
+                </tr>
+                <tr>
+                    <td class="c1">제품이미지</td>
+                    <td><input type="file" id="file" name="file"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="c1">가격</td>
+                    <td><input type="text" id="price" th:field="*{price}"></td>
+                    <td th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="error"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="등록"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
