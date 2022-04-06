@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:include="fragments/header :: header" />
+<body>
+    <header class="header" th:include="fragments/menu :: menu" />
+    <div class="boxMain">
+        <h1>Shopping mall</h1>
+        <div>
+            정렬순서
+            <select name="sortorder" id="sortorder">
+                <option th:each="op : ${priceItems}" th:value="${op.value}" th:text="${op.key}"></option>
+            </select>
+        </div>
+        <table>
+            <tr th:each="product : ${list}">
+                <td>
+                    <img th:src="@{'/product/display/' + ${product.id}}" alt="" width="200">
+                </td>
+                
+                <td>
+                    <dl>
+                        <dt th:text="${product.name}"></dt>
+                        <dd th:text="${product.description}"></dd>
+                    </dl>
+                </td>
+            
+                <td th:text="|${product.price}원|"></td>
+            </tr>       
+                  
+        </table>
+    </div>
+</body>
+</html>
