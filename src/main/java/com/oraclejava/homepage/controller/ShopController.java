@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 
 import com.oraclejava.homepage.dto.Product;
+import com.oraclejava.homepage.repository.CartRepository;
 import com.oraclejava.homepage.service.ProductService;
 
 import org.slf4j.Logger;
@@ -31,6 +32,24 @@ public class ShopController {
     
     @Autowired
     ProductService productService;
+
+    @Autowired
+	CartRepository cartRepository;
+	
+    @GetMapping("/cart")
+    String showCart(Model model) {
+        model.addAttribute("list",cartRepository.getCart().getItems());
+		model.addAttribute("total",cartRepository.getCart().getTotalQty());
+		return "shop/cart";
+    }
+
+	@RequestMapping("/cart/add/{id}")
+	public String addCart(Model model,@PathVariable Integer id ) {
+		cartRepository.getCart().addItem(id);
+		model.addAttribute("list",cartRepository.getCart().getItems());
+		model.addAttribute("total",cartRepository.getCart().getTotalQty());
+		return "shop/cart";
+	}
 
     @GetMapping({"","/list"})
     String list(@RequestParam(value="sortOrder", required=false) Integer sortorder, Model model) {

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:include="fragments/header :: header" />
+<body>
+    <header class="header" th:include="fragments/menu :: menu" />
+    <div class="boxMain">
+        <h1>Shopping mall</h1>
+        현재 장바구니에 들어있는 목록 출력
+
+        <ul th:if="${list!=null} ">
+            <li th:each="name : ${list}"> 
+                <span th:text="${name}"></span>
+            </li>
+        </ul>
+        <ul th:if="${list == null}">
+            <li>없음</li>
+        </ul>
+        
+    총 갯수 : <span th:text="${total}"></span>
+    </div>
+
+    
+</body>
+</html>

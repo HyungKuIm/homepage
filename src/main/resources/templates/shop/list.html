@@ -43,7 +43,8 @@
 
             $(".add_to_cart").click(function(){
                 const id = $(this).data("id");
-                console.log(id);
+                //console.log(id);
+                location.href = "[[@{|/shop/cart/add/|}]]" + id;
             });
         });
     </script>

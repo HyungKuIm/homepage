@@ -4,6 +4,7 @@
 	        <h1><a th:href="@{/}">HyungKu Im's HomePage</a></h1>
 			<p th:if="${session.loginMember}"><a th:href="@{/logout}">logout</a></p>
 			<p th:unless="${session.loginMember}"><a th:href="@{/login}">login</a></p>
+			<p><a th:href="@{/shop/cart}">장바구니</a></p>
 	    </div>
 	</div>
 	
