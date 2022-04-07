@@ -25,9 +25,27 @@
                 </td>
             
                 <td th:text="|${product.price}원|"></td>
+                <td>
+                    <input type="image" th:src="@{/img/R.png}" width="100" class="add_to_cart" th:data-id="${product.id}">
+                </td>
             </tr>       
                   
         </table>
     </div>
+
+    <script>
+        $(function(){
+            $("#sortorder").change(function(){
+                const order = $(this).val();
+                console.log(order);
+                location.href = "[[@{|/shop?sortOrder=|}]]" + order;
+            });
+
+            $(".add_to_cart").click(function(){
+                const id = $(this).data("id");
+                console.log(id);
+            });
+        });
+    </script>
 </body>
 </html>

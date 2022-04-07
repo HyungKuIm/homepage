@@ -20,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -32,8 +33,8 @@ public class ShopController {
     ProductService productService;
 
     @GetMapping({"","/list"})
-    String list(Model model) {
-
+    String list(@RequestParam(value="sortOrder", required=false) Integer sortorder, Model model) {
+        sortorder = sortorder == null ? 1 : sortorder;
         Map<String, Integer> priceItems;
 
         priceItems = new LinkedHashMap<>();	// 並べ替え選択肢
@@ -41,7 +42,7 @@ public class ShopController {
 		priceItems.put("安い順", 2);
 		priceItems.put("高い順", 3);
 
-        List<Product> list = productService.findAll();
+        List<Product> list = productService.findAll(sortorder);
         model.addAttribute("list", list);
 
         model.addAttribute("priceItems", priceItems);
