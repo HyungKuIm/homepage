@@ -2,9 +2,6 @@
 	<div class="boxSiteName">
 	    <div class="site">
 	        <h1><a th:href="@{/}">HyungKu Im's HomePage</a></h1>
-			<p th:if="${session.loginMember}"><a th:href="@{/logout}">logout</a></p>
-			<p th:unless="${session.loginMember}"><a th:href="@{/login}">login</a></p>
-			<p><a th:href="@{/shop/cart}">장바구니</a></p>
 	    </div>
 	</div>
 	
@@ -15,11 +12,6 @@
 	            <li><a th:href="@{/intro}">Intro</a></li>
 	            <li><a th:href="@{/gissing}">Gissing</a></li>
 	            <li><a th:href="@{/japanese}">Japanese</a></li>
-	            <li><a th:href="@{/guestbook}">남기실 글</a></li>
-				<li><a th:href="@{/jusorok}">주소록</a></li>
-				<li><a th:href="@{/employee/list}">사원목록</a></li>
-				<li><a th:href="@{/product/list}">제품목록</a></li>
-				<li><a th:href="@{/shop}">shopping mall</a></li>
 	        </ul>
 	    </nav>
 	</div>
