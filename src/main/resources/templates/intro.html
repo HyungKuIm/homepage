@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/header :: header" />
+<head th:include="fragments/header :: header"></head>
 
 <body>
 
-<header class="header" th:include="fragments/menu :: menu" />
+<header class="header" th:include="fragments/menu :: menu"></header>
 
 <div class="boxMain">
    <div class="boxKisa">
         <article class="kisa">
             <h1>안녕하세요</h1>
-            <p><img src="img/im.JPEG" alt=""></p>
+            <p><img th:src="@{/static/img/im.JPEG}" alt=""></p>
             <p>홈페이지를 개설했습니다. 그동안 이것저것 개설과 폐지를 반복하다보니,,,
                 한곳에 정착하기가 어려웠습니다. 무료도 쓰다가 asp.net 사이트에 가입도 하고
                 jsp(이곳)으로 옮겼지만, 여러가지 바쁜일도 있고 해서 제대로 관리를 못했습니다.</p>
@@ -20,11 +20,11 @@
         </article>
     </div>
     <div class="boxSide">
-        <div th:include="fragments/side :: side" />
+        <div th:include="fragments/side :: side"></div>
     </div>
 </div>
 
-<div th:include="fragments/copyright :: copyright" />
+<div th:include="fragments/copyright :: copyright"></div>
 
 </body>
 </html>

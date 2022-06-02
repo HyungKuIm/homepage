@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/header :: header" />
+<head th:include="fragments/header :: header"></head>
 
 <body>
 
-<header class="header" th:include="fragments/menu :: menu" />
+<header class="header" th:include="fragments/menu :: menu"></header>
 
 <div class="boxMain">
    <div class="boxKisa">
         <article class="kisa">
             <h1>일본어 소개</h1>
-            <p><img src="img/ukiyoe.jpg" alt="우키요에"></p>
+            <p><img th:src="@{/static/img/ukiyoe.jpg}" alt="우키요에"></p>
             <p>일본어 공부의 첫걸음은 무엇보다 히라가나를 외우는 것이다.
             	사실 영어 공부와 같다. 단 너무 빨리 다 외우려고 하면 좌절하게 될 수 있다.
             	차근히 연습장에 쓰면서 외우면 2주 정도면 다 외울 수 있다.
@@ -28,11 +28,11 @@
         </article>
     </div>
     <div class="boxSide">
-        <div th:include="fragments/side :: side" />
+		<div th:include="fragments/side :: side"></div>
     </div>
 </div>
 
-<div th:include="fragments/copyright :: copyright" />
+<div th:include="fragments/copyright :: copyright"></div>
 
 </body>
 </html>

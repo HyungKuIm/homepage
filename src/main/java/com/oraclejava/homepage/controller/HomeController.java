@@ -25,4 +25,9 @@ public class HomeController {
 	String japanese() {
 		return "japanese";
 	}
+
+	@RequestMapping("/sora")
+	String sora() {
+		return "forward:/static/index.html";
+	}
 }

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/header :: header" />
+<head th:include="fragments/header :: header"></head>
 
 <body>
 
-<header class="header" th:include="fragments/menu :: menu" />
+<header class="header" th:include="fragments/menu :: menu"></header>
 
 <div class="boxMain">
    <div class="boxKisa">
         <article class="kisa">
             <h1>George Gissing 소개</h1>
-            <p><img src="img/gissing2.jpg" alt="George Gissing"></p>
+            <p><img th:src="@{/static/img/gissing2.jpg}" alt="George Gissing"></p>
             <p>조지 로버트 기싱(George Robert Gissing)은 1857년 11월 22일 영국 중부의 소도시
             웨이크필드에서 약제사의 아들로 태어났다. 퀘이커 교도들이 운영하는 사립학교를 졸업한
             그는 훗날 맨체스터대학으로 개편된 오웬스대학에 장학생으로 입학하였다.
@@ -22,11 +22,11 @@
         </article>
     </div>
     <div class="boxSide">
-        <div th:include="fragments/side :: side" />
+        <div th:include="fragments/side :: side"></div>
     </div>
 </div>
 
-<div th:include="fragments/copyright :: copyright" />
+<div th:include="fragments/copyright :: copyright"></div>
 
 </body>
 </html>

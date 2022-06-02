@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/header :: header" />
+<head th:include="fragments/header :: header"></head>
 
 <body class="top">
 
-<header class="header" th:include="fragments/menu :: menu" />
+<header class="header" th:include="fragments/menu :: menu"></header>
 
 <div class="boxA">
 	<article class="gaiyou pickup">
 	<a th:href="@{/intro}">
-		<img src="img/tomato-top.jpg" alt="">
+		<img th:src="@{/static/img/tomato-top.jpg}" alt="">
 		<h1>주인장 소개！</h1>
 		<p>홈페이지를 관리하는 주인장을 소개합니다. 페이스북, 네이버블로그, 인스타그램 정보 확인 가능!!</p>
 		<p class="more">계속 읽기<i class="fa fa-chevron-right"></i></p>
@@ -19,7 +19,7 @@
 <div class="boxA-1">
 	<article class="gaiyou">
 	<a th:href="@{/gissing}">
-		<img src="img/color-top.jpg" alt="">
+		<img th:src="@{/static/img/color-top.jpg}" alt="">
 		<h1>19세기 영국작가 조지 기싱 소개</h1>
 		<p>한국에는 비록 덜 알려졌지만, 명망있는 영국작가인 조지 기싱을 소개합니다.</p>
 		<p class="more">계속 읽기<i class="fa fa-chevron-right"></i></p>
@@ -28,11 +28,20 @@
 
 	<article class="gaiyou">
 	<a th:href="@{/japanese}">
-		<img src="img/imo-top.jpg" alt="">
+		<img th:src="@{/static/img/imo-top.jpg}" alt="">
 		<h1>일본어 소개</h1>
 		<p>가장 배우기 쉽다(?)고 잘못 알려진 일본어를 쉽게 배울 수 있는 방법은??</p>
 		<p class="more">계속 읽기<i class="fa fa-chevron-right"></i></p>
 	</a>
+	</article>
+
+	<article class="gaiyou">
+		<a th:href="@{/sora}">
+			<img th:src="@{/static/img/sora3.jpg}" alt="">
+			<h1>sora</h1>
+			<p>제가 키우고 있는 소라 고양이를 소개합니다.</p>
+			<p class="more">계속 읽기<i class="fa fa-chevron-right"></i></p>
+		</a>
 	</article>
 
 	<!-- <article class="gaiyou">
@@ -55,7 +64,7 @@
 </div>
 </div>
 
-<div th:include="fragments/copyright :: copyright" />
+<div th:include="fragments/copyright :: copyright"></div>
 
 </body>
 </html>
