@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:include="fragments/header :: header"></head>
+<body>
+<header class="header" th:include="fragments/menu :: menu"></header>
+<table>
+    <thead>
+    <tr>
+        <th>No</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Sex</th>
+        <th>Birthday</th>
+        <th>Mail Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : *{employees}">
+        <td th:text="${employee.no}"></td>
+        <td th:text="${employee.firstName}"></td>
+        <td th:text="${employee.lastName}"></td>
+        <td th:text="${employee.sex}"></td>
+        <td th:text="${employee.birthday}"></td>
+        <td th:text="${employee.mailAddress}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:include="fragments/copyright :: copyright"></div>
+</body>
+</html>
