@@ -19,5 +19,6 @@ public class Todo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private Date createdAt = new Date();
+    private Date createdAt;
+    private Boolean finished;
 }
