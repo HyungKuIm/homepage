@@ -44,9 +44,11 @@ public class TodoServiceImpl implements TodoService{
     public Todo finishTodo(int todoId) {
         Todo todo = findTodo(todoId);
         if (todo.getFinished()) {
-            throw new RuntimeException("이미 완료처리가 되어 있습니다!");
+            //throw new RuntimeException("이미 완료처리가 되어 있습니다!");
+            todo.setFinished(false);
+        } else {
+            todo.setFinished(true);
         }
-        todo.setFinished(true);
         todoRepository.save(todo);
         return todo;
     }

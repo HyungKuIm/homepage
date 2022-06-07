@@ -14,6 +14,6 @@ values
     (null, '은진', '박', null, 'female');
 
 
-insert into todo(name, created_at, finished) values ('Today; 고양이 목욕시키기', now(), false);
+insert into todo(name, created_at, finished) values ('Today; 고양이 목욕시키기', now(), true);
 insert into todo(name, created_at, finished) values ('Tomorrow; Vue JS 수업', now(), false);
 insert into todo(name, created_at, finished) values ('Daily feed cat', now(), false);
